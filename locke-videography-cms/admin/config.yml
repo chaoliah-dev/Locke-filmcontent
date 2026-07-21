@@ -1,3 +1,4 @@
+# Use DecapBridge classic auth (required)
 backend:
   name: git-gateway
   repo: chaoliah-dev/Locke-filmcontent
@@ -15,7 +16,7 @@ backend:
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 site_url: https://lockevisualwork.netlify.app
 
-media_folder: "images/uploads"
+media_folder: "locke-videography-cms/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
@@ -24,7 +25,7 @@ collections:
     files:
       - name: "works"
         label: "Travel Film Works"
-        file: "data/travel-works.json"
+        file: "locke-videography-cms/data/travel-works.json"
         fields:
           - label: "Works"
             name: "works"
