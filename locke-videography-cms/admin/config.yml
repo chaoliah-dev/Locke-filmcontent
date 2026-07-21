@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "travel_film"
+    label: "Travel Film"
+    files:
+      - name: "works"
+        label: "Travel Film Works"
+        file: "data/travel-works.json"
+        fields:
+          - label: "Works"
+            name: "works"
+            widget: "list"
+            summary: "{{title}} — {{location}} ({{section}})"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Year", name: "year", widget: "number", value_type: "int"}
+              - label: "Section"
+                name: "section"
+                widget: "select"
+                options:
+                  - {label: "Recent (top hero, max 4)", value: "recent"}
+                  - {label: "Past Works (grid, max 6)", value: "past"}
+                hint: "Recent works appear in the top hero, in the order listed below. Past works fill the grid below it, also in order."
+              - label: "Cover Image"
+                name: "cover_image"
+                widget: "image"
+                required: false
+                hint: "Used as the hero background / grid tile background."
+              - label: "Video Embed"
+                name: "video_embed"
+                widget: "text"
+                required: false
+                hint: "Paste the full <iframe> embed code from Vimeo or YouTube."
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                required: false
+              - label: "Still 1"
+                name: "still_1"
+                widget: "image"
+                required: false
+              - label: "Still 2"
+                name: "still_2"
+                widget: "image"
+                required: false
+              - label: "Still 3"
+                name: "still_3"
+                widget: "image"
+                required: false
+              - label: "URL slug"
+                name: "slug"
+                widget: "string"
+                hint: "Must exactly match this work's HTML filename, without .html — do not change for existing works."
