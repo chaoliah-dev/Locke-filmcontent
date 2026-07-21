@@ -2,11 +2,24 @@
   "works": [
     {
       "section": "recent",
+      "slug": "patagonia-traverse",
+      "cover_image": "",
+      "video_embed": "",
+      "location": "Seattle ",
+      "title": "Olympic Mountain",
+      "still_1": "",
+      "still_2": "",
+      "still_3": "",
+      "description": "The rainy Seattle; through the forest to the beach. ",
+      "year": 2026
+    },
+    {
+      "section": "recent",
       "slug": "kyoto-in-passing",
       "cover_image": "/images/uploads/_dsc5605.jpg",
       "video_embed": "",
       "location": "Iceland",
-      "title": "By the Sea",
+      "title": "Another World",
       "still_1": "/images/uploads/_dsc5636.jpg",
       "still_2": "/images/uploads/_dsc5623.jpg",
       "still_3": "/images/uploads/_dsc5624.jpg",
@@ -15,42 +28,29 @@
     },
     {
       "section": "recent",
-      "slug": "patagonia-traverse",
-      "cover_image": "",
-      "video_embed": "",
-      "location": "Patagonia, Chile",
-      "title": "Patagonia traverse",
-      "still_1": "",
-      "still_2": "",
-      "still_3": "",
-      "description": "Add a short description of this film here — where it was shot, the story behind it, gear or technical notes, anything worth telling.",
-      "year": 2026
-    },
-    {
-      "section": "recent",
       "slug": "coastal-vietnam",
       "cover_image": "",
       "video_embed": "",
-      "location": "Da Nang, Vietnam",
-      "title": "Coastal Vietnam",
+      "location": "California",
+      "title": "Sun Shine Coast",
       "still_1": "",
       "still_2": "",
       "still_3": "",
-      "description": "Add a short description of this film here — where it was shot, the story behind it, gear or technical notes, anything worth telling.",
-      "year": 2026
+      "description": "",
+      "year": 2024
     },
     {
       "section": "recent",
       "slug": "reykjavik-off-season",
       "cover_image": "",
       "video_embed": "",
-      "location": "Reykjavik, Iceland",
-      "title": "Reykjavik, off-season",
+      "location": "Scotland, UK",
+      "title": "Islands",
       "still_1": "",
       "still_2": "",
       "still_3": "",
       "description": "Add a short description of this film here — where it was shot, the story behind it, gear or technical notes, anything worth telling.",
-      "year": 2025
+      "year": 2023
     },
     {
       "section": "past",
