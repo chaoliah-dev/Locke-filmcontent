@@ -1,4 +1,4 @@
-# Use DecapBridge classic auth (required)
+
 backend:
   name: git-gateway
   repo: chaoliah-dev/Locke-filmcontent
