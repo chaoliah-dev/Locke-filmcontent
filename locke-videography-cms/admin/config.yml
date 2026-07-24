@@ -1,4 +1,4 @@
-
+# Use DecapBridge classic auth (required)
 backend:
   name: git-gateway
   repo: chaoliah-dev/Locke-filmcontent
@@ -20,6 +20,74 @@ media_folder: "locke-videography-cms/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+  - name: "home"
+    label: "Homepage"
+    files:
+      - name: "hero"
+        label: "Hero Video"
+        file: "locke-videography-cms/data/home.json"
+        fields:
+          - label: "Hero Video"
+            name: "hero_video"
+            widget: "file"
+            required: false
+            hint: "Short, web-optimized MP4 (ideally under ~8MB, 1080p). Plays once on load, then holds the last frame."
+          - label: "Poster Image"
+            name: "hero_poster"
+            widget: "image"
+            required: false
+            hint: "Shown before the video loads (and as a fallback). Use a frame from the video."
+
+  - name: "instagram_works"
+    label: "Instagram Commercial — Main Page Works"
+    files:
+      - name: "works"
+        label: "Works"
+        file: "locke-videography-cms/data/instagram-works.json"
+        fields:
+          - label: "Works"
+            name: "works"
+            widget: "list"
+            summary: "{{title}}"
+            max: 4
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Year", name: "year", widget: "string", required: false}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Video Embed"
+                name: "video_embed"
+                widget: "text"
+                required: false
+                hint: "Paste the full <iframe> embed from Vimeo or YouTube."
+              - {label: "Still 1", name: "still_1", widget: "image", required: false}
+              - {label: "Still 2", name: "still_2", widget: "image", required: false}
+              - {label: "Still 3", name: "still_3", widget: "image", required: false}
+              - label: "URL slug"
+                name: "slug"
+                widget: "string"
+                hint: "Must exactly match this work's HTML filename, without .html — do not change for existing works."
+
+  - name: "instagram_explore"
+    label: "Instagram Commercial — Explore Page"
+    files:
+      - name: "items"
+        label: "Explore Items"
+        file: "locke-videography-cms/data/instagram-explore.json"
+        fields:
+          - label: "Works"
+            name: "works"
+            widget: "list"
+            summary: "{{title}}"
+            max: 4
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Video"
+                name: "video"
+                widget: "file"
+                required: false
+                hint: "Short, web-optimized MP4 (ideally under ~8MB, 1080p). Loops continuously while this item is open."
+
   - name: "travel_film"
     label: "Travel Film"
     files:
@@ -68,6 +136,49 @@ collections:
                 name: "still_3"
                 widget: "image"
                 required: false
+              - label: "URL slug"
+                name: "slug"
+                widget: "string"
+                hint: "Must exactly match this work's HTML filename, without .html — do not change for existing works."
+
+  - name: "ai_assets"
+    label: "AI Assets"
+    files:
+      - name: "page"
+        label: "AI Assets Carousel Background"
+        file: "locke-videography-cms/data/ai-assets.json"
+        fields:
+          - label: "Background Image"
+            name: "background_image"
+            widget: "image"
+            required: false
+            hint: "Fills the carousel background. The 4 cards themselves are edited under 'AI Assets — Archive & Details' below, since they're the same works shown both places."
+
+  - name: "ai_archive"
+    label: "AI Assets — Archive & Details"
+    files:
+      - name: "cards"
+        label: "Archive Cards (the 4 boxes)"
+        file: "locke-videography-cms/data/ai-archive.json"
+        fields:
+          - label: "Works"
+            name: "works"
+            widget: "list"
+            summary: "{{title}}"
+            max: 4
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Cover Image", name: "image", widget: "image", required: false}
+              - label: "Video Embed"
+                name: "video_embed"
+                widget: "text"
+                required: false
+                hint: "Paste the full <iframe> embed from Vimeo or YouTube."
+              - {label: "Year", name: "year", widget: "string", required: false}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "Still 1", name: "still_1", widget: "image", required: false}
+              - {label: "Still 2", name: "still_2", widget: "image", required: false}
+              - {label: "Still 3", name: "still_3", widget: "image", required: false}
               - label: "URL slug"
                 name: "slug"
                 widget: "string"

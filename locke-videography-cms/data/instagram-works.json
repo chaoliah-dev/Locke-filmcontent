@@ -1,0 +1,8 @@
+{
+  "works": [
+    { "title": "Product launch reel", "slug": "product-launch-reel", "year": "2026", "description": "Add a short description of this piece here.", "video_embed": "", "still_1": "", "still_2": "", "still_3": "" },
+    { "title": "Behind the scenes", "slug": "behind-the-scenes", "year": "2026", "description": "Add a short description of this piece here.", "video_embed": "", "still_1": "", "still_2": "", "still_3": "" },
+    { "title": "Studio session cut", "slug": "studio-session-cut", "year": "2026", "description": "Add a short description of this piece here.", "video_embed": "", "still_1": "", "still_2": "", "still_3": "" },
+    { "title": "Founder story", "slug": "founder-story", "year": "2026", "description": "Add a short description of this piece here.", "video_embed": "", "still_1": "", "still_2": "", "still_3": "" }
+  ]
+}

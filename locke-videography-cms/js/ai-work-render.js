@@ -8,11 +8,11 @@
   var slug = document.body.getAttribute('data-slug');
   if (!slug) return;
 
-  fetch('data/travel-works.json')
+  fetch('data/ai-archive.json')
     .then(function(r){ return r.json(); })
     .then(function(data){
       var w = (data.works || []).find(function(x){ return x.slug === slug; });
-      if (!w) { console.error('No work found for slug', slug); return; }
+      if (!w) { console.error('No AI work for slug', slug); return; }
 
       document.title = w.title + ' — Locke Videography';
 
@@ -20,7 +20,7 @@
       if (h1) h1.textContent = w.title;
 
       var meta = document.getElementById('workMeta');
-      if (meta) meta.textContent = 'TRAVEL FILM — ' + (w.location || '').toUpperCase() + ' — ' + w.year;
+      if (meta) meta.textContent = 'AI ASSET' + (w.year ? ' — ' + w.year : '');
 
       var desc = document.getElementById('workDesc');
       if (desc && w.description) desc.textContent = w.description;
@@ -45,7 +45,5 @@
 
       if (window.initDynamicInteractions) window.initDynamicInteractions();
     })
-    .catch(function(err){
-      console.error('Could not load travel-works.json', err);
-    });
+    .catch(function(err){ console.error('Could not load ai-archive.json', err); });
 })();

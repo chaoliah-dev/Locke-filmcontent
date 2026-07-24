@@ -1,4 +1,10 @@
 (function(){
+  // Reveal-capable elements (e.g. still boxes) must initialize regardless
+  // of whether the CMS data fetch succeeds, so they're never stuck invisible.
+  document.addEventListener('DOMContentLoaded', function(){
+    if(window.initDynamicInteractions) window.initDynamicInteractions();
+  });
+
   function esc(s){
     return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }

@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instagram Commercial — Locke Videography</title>
-<meta name="description" content="Selected commercial work by Locke Hsu.">
+<title>Locke Videography</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -702,7 +701,7 @@ ul{list-style:none}
 
 </style>
 </head>
-<body data-dynamic>
+<body data-dynamic data-slug="ai-asset-one">
 
 <nav class="nav on-dark" id="mainNav">
   <div class="wrap">
@@ -719,17 +718,57 @@ ul{list-style:none}
   </div>
 </nav>
 
-<section class="explore-stage">
-  <video id="exploreVideoA" class="explore-video is-active" muted loop playsinline></video>
-  <video id="exploreVideoB" class="explore-video" muted loop playsinline></video>
-  <div class="explore-scrim" aria-hidden="true"></div>
+<section class="videosection">
+  <div class="wrap">
+    <a href="ai-assets-archive.html" class="back">&larr; AI Assets</a>
 
-  <a href="instagram-commercial.html" class="back explore-back">&larr; Instagram Commercial</a>
+    <div class="videowrap" id="videoWrap">
+      <a href="#" class="no-op playbtn" aria-label="Play video">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+      </a>
+      <span class="videohint">VIDEO — SET IN CMS</span>
+    </div>
 
-  <div class="explore-sidebar" id="exploreSidebar"></div>
+    <div class="worktitle">
+      <h1 id="workTitle">Loading&hellip;</h1>
+      <p class="meta" id="workMeta"></p>
+    </div>
+  </div>
 </section>
 
-<script src="js/explore-render.js"></script>
+<section class="section light detailsection">
+  <div class="wrap">
+    <p class="eyebrow detail-label"><span class="dot"></span>DETAILS</p>
+    <div class="detailbox">
+      <p id="workDesc">Loading&hellip;</p>
+    </div>
+  </div>
+</section>
+
+<section class="section light tight">
+  <div class="wrap">
+    <div class="spiral">
+      <div class="gitem spiralbox s1"><span>STILL 01</span></div>
+      <div class="gitem spiralbox s2"><span>STILL 02</span></div>
+      <div class="gitem spiralbox s3"><span>STILL 03</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section light" id="contact">
+  <div class="wrap footer">
+    <div class="row">
+      <div class="meta">
+        <a href="mailto:chaolian@usc.edu" class="btn">chaolian@usc.edu</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 LOCKE VIDEOGRAPHY</span>
+    </div>
+  </div>
+</section>
+
+<script src="js/ai-work-render.js"></script>
 <script>
 (function(){
   var nav=document.querySelector('.nav');
