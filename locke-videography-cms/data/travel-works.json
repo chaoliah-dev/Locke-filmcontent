@@ -4,7 +4,7 @@
       "section": "recent",
       "slug": "kyoto-in-passing",
       "cover_image": "/images/uploads/_dsc5606.jpg",
-      "video_embed": "<https://youtu.be/HUYtks-Pg9E>",
+      "video_embed": "<iframe src=\"https://www.youtube.com/embed/HUYtks-Pg9E\" style=\"position:absolute;inset:0;width:100%;height:100%;border:0\" allow=\"autoplay; encrypted-media; picture-in-picture\" allowfullscreen></iframe>",
       "location": "Iceland",
       "title": "Standing Between Two Worlds",
       "still_1": "/images/uploads/_dsc5677.jpg",
