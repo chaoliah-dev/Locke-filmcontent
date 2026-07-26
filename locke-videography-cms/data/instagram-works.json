@@ -5,7 +5,7 @@
       "slug": "product-launch-reel",
       "year": "2026",
       "description": "Add a short description of this piece here.",
-      "video_embed": "<iframe src=\"https://youtu.be/ey-jv-ftW0U\" style=\"position:absolute;inset:0;width:100%;height:100%;border:0\" allow=\"autoplay; encrypted-media; picture-in-picture\" allowfullscreen></iframe>",
+      "video_embed": "<iframe src=\"https://www.youtube.com/embed/ey-jv-ftW0U\" style=\"position:absolute;inset:0;width:100%;height:100%;border:0\" allow=\"autoplay; encrypted-media; picture-in-picture\" allowfullscreen></iframe>",
       "still_1": "/images/uploads/c0827.00_00_03_29.still002.jpg",
       "still_2": "/images/uploads/c0827.00_00_38_09.still003.jpg",
       "still_3": "/images/uploads/c0827.00_00_49_06.still008.jpg"
