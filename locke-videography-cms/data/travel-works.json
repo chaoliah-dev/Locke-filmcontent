@@ -3,15 +3,15 @@
     {
       "section": "recent",
       "slug": "kyoto-in-passing",
-      "cover_image": "",
-      "video_embed": "",
-      "location": "Kyoto, Japan",
-      "title": "The other side of the World",
-      "still_1": "",
-      "still_2": "",
-      "still_3": "",
-      "description": "Add a short description of this film here — where it was shot, the story behind it, gear or technical notes, anything worth telling.",
-      "year": 2026
+      "cover_image": "/images/uploads/_dsc5606.jpg",
+      "video_embed": "https://youtu.be/HUYtks-Pg9E",
+      "location": "Iceland",
+      "title": "Standing Between Two Worlds",
+      "still_1": "/images/uploads/_dsc5677.jpg",
+      "still_2": "/images/uploads/_dsc5612.jpg",
+      "still_3": "/images/uploads/_dsc5636.jpg",
+      "description": "There is a particular kind of violence that unfolds too slowly to be recognized as violence. Beneath the island, two plates of the Earth's crust have spent millions of years quietly pulling apart, no faster than a fingernail grows. Into the widening wound, the earth bleeds — not blood, but basalt, rising molten to fill the gap before it cools into black rock. The island, then, is not so much built as it is a scar that keeps insisting on becoming land.",
+      "year": 2025
     },
     {
       "section": "recent",
