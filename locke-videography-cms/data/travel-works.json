@@ -16,15 +16,15 @@
     {
       "section": "recent",
       "slug": "patagonia-traverse",
-      "cover_image": "",
-      "video_embed": "",
-      "location": "Patagonia, Chile",
-      "title": "Patagonia traverse",
-      "still_1": "",
-      "still_2": "",
-      "still_3": "",
-      "description": "Add a short description of this film here — where it was shot, the story behind it, gear or technical notes, anything worth telling.",
-      "year": 2026
+      "cover_image": "/images/uploads/seattle-cover-1.jpg",
+      "video_embed": "<iframe src=\"https://youtu.be/BCinS6V10bo\" style=\"position:absolute;inset:0;width:100%;height:100%;border:0\" allow=\"autoplay; encrypted-media; picture-in-picture\" allowfullscreen></iframe>",
+      "location": "Olympic National Park, Seattle ",
+      "title": "Somewhere Between Rain and Ridge",
+      "still_1": "/images/uploads/seattle-cover.jpg",
+      "still_2": "/images/uploads/seattle-cover-2.jpg",
+      "still_3": "/images/uploads/seattle-cover-3.jpg",
+      "description": "A place where rain does not stop",
+      "year": 2024
     },
     {
       "section": "recent",
