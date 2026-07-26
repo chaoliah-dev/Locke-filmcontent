@@ -17,7 +17,7 @@
       "section": "recent",
       "slug": "patagonia-traverse",
       "cover_image": "/images/uploads/seattle-cover-1.jpg",
-      "video_embed": "<iframe src=\"https://youtu.be/BCinS6V10bo\" style=\"position:absolute;inset:0;width:100%;height:100%;border:0\" allow=\"autoplay; encrypted-media; picture-in-picture\" allowfullscreen></iframe>",
+      "video_embed": "<iframe src=\"https://www.youtube.com/embed/BCinS6V10bo\" style=\"position:absolute;inset:0;width:100%;height:100%;border:0\" allow=\"autoplay; encrypted-media; picture-in-picture\" allowfullscreen></iframe>",
       "location": "Olympic National Park, Seattle ",
       "title": "Somewhere Between Rain and Ridge",
       "still_1": "/images/uploads/seattle-cover.jpg",
