@@ -602,12 +602,18 @@ ul{list-style:none}
 .explore-video{
   position:absolute;inset:0;
   width:100%;height:100%;
-  object-fit:cover;
+  overflow:hidden;
   opacity:0;
   transform:rotate(-18deg) scale(1.08);
   transform-origin:50% 50%;
   transition:opacity .6s ease,transform .6s ease;
   z-index:0;
+}
+.explore-video iframe{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  border:0;
+  pointer-events:none;
 }
 .explore-video.is-active{opacity:1;transform:rotate(0deg) scale(1.08)}
 .explore-scrim{
@@ -723,22 +729,22 @@ ul{list-style:none}
   <div class="wrap">
     <div class="spiral5">
 
-      <a href="product-launch-reel.html" class="cell photobox b1">
+      <a href="product-launch-reel.html" class="cell photobox b1" data-slug="product-launch-reel">
         <div class="inner"></div>
         <div class="info"><h4>Product launch reel</h4></div>
       </a>
 
-      <a href="behind-the-scenes.html" class="cell photobox b2">
+      <a href="behind-the-scenes.html" class="cell photobox b2" data-slug="behind-the-scenes">
         <div class="inner"></div>
         <div class="info"><h4>Behind the scenes</h4></div>
       </a>
 
-      <a href="studio-session-cut.html" class="cell photobox b3">
+      <a href="studio-session-cut.html" class="cell photobox b3" data-slug="studio-session-cut">
         <div class="inner"></div>
         <div class="info"><h4>Studio session cut</h4></div>
       </a>
 
-      <a href="founder-story.html" class="cell photobox b4">
+      <a href="founder-story.html" class="cell photobox b4" data-slug="founder-story">
         <div class="inner"></div>
         <div class="info"><h4>Founder story</h4></div>
       </a>
@@ -751,6 +757,7 @@ ul{list-style:none}
       </a>
 
     </div>
+    <script src="js/instagram-commercial-render.js"></script>
   </div>
 </section>
 

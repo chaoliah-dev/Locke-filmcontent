@@ -37,6 +37,18 @@ collections:
             widget: "image"
             required: false
             hint: "Shown before the video loads (and as a fallback). Use a frame from the video."
+          - label: "Travel Film Card Cover"
+            name: "travel_cover"
+            widget: "image"
+            required: false
+          - label: "Instagram Commercial Card Cover"
+            name: "instagram_cover"
+            widget: "image"
+            required: false
+          - label: "AI Assets Card Cover"
+            name: "ai_cover"
+            widget: "image"
+            required: false
 
   - name: "instagram_works"
     label: "Instagram Commercial — Main Page Works"
@@ -52,6 +64,11 @@ collections:
             max: 4
             fields:
               - {label: "Title", name: "title", widget: "string"}
+              - label: "Cover Image"
+                name: "cover_image"
+                widget: "image"
+                required: false
+                hint: "Shown in the spiral box on the main Instagram Commercial page."
               - {label: "Year", name: "year", widget: "string", required: false}
               - {label: "Description", name: "description", widget: "text"}
               - label: "Video Embed"
@@ -82,11 +99,11 @@ collections:
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-              - label: "Video"
+              - label: "Video URL"
                 name: "video"
-                widget: "file"
+                widget: "string"
                 required: false
-                hint: "Short, web-optimized MP4 (ideally under ~8MB, 1080p). Loops continuously while this item is open."
+                hint: "Paste a Vimeo or YouTube share link (e.g. https://vimeo.com/123456789). Vimeo looks cleaner here since it has a true no-logo background-loop mode; YouTube works too but keeps its watermark."
 
   - name: "travel_film"
     label: "Travel Film"

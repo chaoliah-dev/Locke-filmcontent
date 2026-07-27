@@ -1,17 +1,19 @@
 {
   "works": [
     {
-      "title": "Pincnic Special ",
+      "title": "Product launch reel",
+      "cover_image": "",
       "slug": "product-launch-reel",
       "year": "2026",
       "description": "Add a short description of this piece here.",
-      "video_embed": "<iframe src=\"https://www.youtube.com/embed/ey-jv-ftW0U\" style=\"position:absolute;inset:0;width:100%;height:100%;border:0\" allow=\"autoplay; encrypted-media; picture-in-picture\" allowfullscreen></iframe>",
-      "still_1": "/images/uploads/c0827.00_00_03_29.still002.jpg",
-      "still_2": "/images/uploads/c0827.00_00_38_09.still003.jpg",
-      "still_3": "/images/uploads/c0827.00_00_49_06.still008.jpg"
+      "video_embed": "",
+      "still_1": "",
+      "still_2": "",
+      "still_3": ""
     },
     {
       "title": "Behind the scenes",
+      "cover_image": "",
       "slug": "behind-the-scenes",
       "year": "2026",
       "description": "Add a short description of this piece here.",
@@ -22,6 +24,7 @@
     },
     {
       "title": "Studio session cut",
+      "cover_image": "",
       "slug": "studio-session-cut",
       "year": "2026",
       "description": "Add a short description of this piece here.",
@@ -32,6 +35,7 @@
     },
     {
       "title": "Founder story",
+      "cover_image": "",
       "slug": "founder-story",
       "year": "2026",
       "description": "Add a short description of this piece here.",

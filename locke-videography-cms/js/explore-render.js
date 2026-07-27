@@ -1,6 +1,6 @@
 (function(){
-  // Reveal-capable elements (e.g. still boxes) must initialize regardless
-  // of whether the CMS data fetch succeeds, so they're never stuck invisible.
+  // Reveal-capable elements must initialize regardless of whether the
+  // CMS data fetch succeeds, so nothing is stuck invisible.
   document.addEventListener('DOMContentLoaded', function(){
     if(window.initDynamicInteractions) window.initDynamicInteractions();
   });
@@ -14,32 +14,49 @@
     return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  var active = vidA, standby = vidB;
+  // Turns a plain Vimeo or YouTube share link into a clean, autoplaying,
+  // looping, muted embed URL. Falls back to using the input as-is if it's
+  // already a full embed URL (or something else entirely).
+  function buildEmbedSrc(url){
+    if(!url) return '';
+    url = url.trim();
+    var vimeoMatch = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+    if(vimeoMatch){
+      return 'https://player.vimeo.com/video/' + vimeoMatch[1] + '?background=1&autoplay=1&loop=1&muted=1';
+    }
+    var ytMatch = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/);
+    if(ytMatch){
+      var id = ytMatch[1];
+      return 'https://www.youtube.com/embed/' + id +
+        '?autoplay=1&mute=1&loop=1&playlist=' + id + '&controls=0&modestbranding=1&rel=0';
+    }
+    return url;
+  }
 
-  // Prime the standby element so its first entrance also rotates in correctly.
+  function embedHtml(src){
+    return '<iframe src="' + src + '" allow="autoplay; fullscreen" frameborder="0"></iframe>';
+  }
+
+  var active = vidA, standby = vidB;
   standby.style.transform = 'rotate(-18deg) scale(1.08)';
 
-  function showVideo(src){
-    if(!src) return;
-    standby.src = src;
-    var p = standby.play();
-    var swap = function(){
-      requestAnimationFrame(function(){
-        active.style.transform = 'rotate(18deg) scale(1.08)';
-        active.classList.remove('is-active');
-        standby.classList.add('is-active');
-        var finished = active;
-        var t = active; active = standby; standby = t;
-        setTimeout(function(){
-          finished.pause();
-          finished.style.transition = 'none';
-          finished.style.transform = 'rotate(-18deg) scale(1.08)';
-          void finished.offsetWidth;
-          finished.style.transition = '';
-        }, 620);
-      });
-    };
-    if(p && p.then){ p.then(swap).catch(swap); } else { swap(); }
+  function showVideo(rawUrl){
+    if(!rawUrl) return;
+    standby.innerHTML = embedHtml(buildEmbedSrc(rawUrl));
+    requestAnimationFrame(function(){
+      active.style.transform = 'rotate(18deg) scale(1.08)';
+      active.classList.remove('is-active');
+      standby.classList.add('is-active');
+      var finished = active;
+      var t = active; active = standby; standby = t;
+      setTimeout(function(){
+        finished.innerHTML = ''; // stop the hidden embed entirely
+        finished.style.transition = 'none';
+        finished.style.transform = 'rotate(-18deg) scale(1.08)';
+        void finished.offsetWidth;
+        finished.style.transition = '';
+      }, 620);
+    });
   }
 
   fetch('data/instagram-explore.json')
@@ -68,10 +85,8 @@
         });
 
         if(i === 0 && w.video){
-          active.src = w.video;
+          active.innerHTML = embedHtml(buildEmbedSrc(w.video));
           active.style.transform = 'rotate(0deg) scale(1.08)';
-          var p = active.play();
-          if(p && p.catch){ p.catch(function(){}); }
         }
       });
 

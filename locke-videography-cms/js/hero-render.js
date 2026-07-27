@@ -28,10 +28,26 @@
   video.addEventListener('error', reveal);
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function applyCover(id, url){
+    if(!url) return;
+    var el = document.getElementById(id);
+    if(!el) return;
+    el.style.backgroundImage = 'url(' + url + ')';
+    el.style.backgroundSize = 'cover';
+    el.style.backgroundPosition = 'center';
+    var svg = el.querySelector('svg');
+    var label = el.querySelector('.placeholder-label');
+    if(svg) svg.remove();
+    if(label) label.remove();
+  }
+
   fetch('data/home.json')
     .then(function(r){ return r.json(); })
     .then(function(data){
       if(data.hero_poster){ video.setAttribute('poster', data.hero_poster); }
+      applyCover('coverTravel', data.travel_cover);
+      applyCover('coverInstagram', data.instagram_cover);
+      applyCover('coverAi', data.ai_cover);
       if(data.hero_video){
         video.src = data.hero_video;
         if(reduce){

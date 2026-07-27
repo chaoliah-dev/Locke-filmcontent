@@ -602,12 +602,18 @@ ul{list-style:none}
 .explore-video{
   position:absolute;inset:0;
   width:100%;height:100%;
-  object-fit:cover;
+  overflow:hidden;
   opacity:0;
   transform:rotate(-18deg) scale(1.08);
   transform-origin:50% 50%;
   transition:opacity .6s ease,transform .6s ease;
   z-index:0;
+}
+.explore-video iframe{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  border:0;
+  pointer-events:none;
 }
 .explore-video.is-active{opacity:1;transform:rotate(0deg) scale(1.08)}
 .explore-scrim{
@@ -739,7 +745,7 @@ ul{list-style:none}
     <div class="cards">
 
       <a href="travel-film.html" class="card">
-        <div class="cover">
+        <div class="cover" id="coverTravel">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8A8D93" stroke-width="1.4"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
           <span class="placeholder-label">COVER — REPLACE WITH IMAGE</span>
         </div>
@@ -750,7 +756,7 @@ ul{list-style:none}
       </a>
 
       <a href="instagram-commercial.html" class="card">
-        <div class="cover">
+        <div class="cover" id="coverInstagram">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8A8D93" stroke-width="1.4"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
           <span class="placeholder-label">COVER — REPLACE WITH IMAGE</span>
         </div>
@@ -761,7 +767,7 @@ ul{list-style:none}
       </a>
 
       <a href="ai-assets.html" class="card">
-        <div class="cover">
+        <div class="cover" id="coverAi">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8A8D93" stroke-width="1.4"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
           <span class="placeholder-label">COVER — REPLACE WITH IMAGE</span>
         </div>
