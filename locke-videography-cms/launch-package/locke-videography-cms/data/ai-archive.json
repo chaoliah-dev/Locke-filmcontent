@@ -1,0 +1,8 @@
+{
+  "works": [
+    { "title": "Asset one", "image": "", "slug": "ai-asset-one" },
+    { "title": "Asset two", "image": "", "slug": "ai-asset-two" },
+    { "title": "Asset three", "image": "", "slug": "ai-asset-three" },
+    { "title": "Asset four", "image": "", "slug": "ai-asset-four" }
+  ]
+}

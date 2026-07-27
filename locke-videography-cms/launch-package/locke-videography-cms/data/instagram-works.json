@@ -1,0 +1,48 @@
+{
+  "works": [
+    {
+      "title": "Product launch reel",
+      "cover_image": "",
+      "slug": "product-launch-reel",
+      "year": "2026",
+      "description": "Add a short description of this piece here.",
+      "video_embed": "",
+      "still_1": "",
+      "still_2": "",
+      "still_3": ""
+    },
+    {
+      "title": "Behind the scenes",
+      "cover_image": "",
+      "slug": "behind-the-scenes",
+      "year": "2026",
+      "description": "Add a short description of this piece here.",
+      "video_embed": "",
+      "still_1": "",
+      "still_2": "",
+      "still_3": ""
+    },
+    {
+      "title": "Studio session cut",
+      "cover_image": "",
+      "slug": "studio-session-cut",
+      "year": "2026",
+      "description": "Add a short description of this piece here.",
+      "video_embed": "",
+      "still_1": "",
+      "still_2": "",
+      "still_3": ""
+    },
+    {
+      "title": "Founder story",
+      "cover_image": "",
+      "slug": "founder-story",
+      "year": "2026",
+      "description": "Add a short description of this piece here.",
+      "video_embed": "",
+      "still_1": "",
+      "still_2": "",
+      "still_3": ""
+    }
+  ]
+}
