@@ -20,6 +20,42 @@ media_folder: "locke-videography-cms/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+  - name: "about"
+    label: "About Page"
+    files:
+      - name: "page"
+        label: "About Page"
+        file: "locke-videography-cms/data/about.json"
+        fields:
+          - label: "Intro Video Embed"
+            name: "video_embed"
+            widget: "text"
+            required: false
+            hint: "Paste the full <iframe> embed code from Vimeo or YouTube."
+          - label: "Life Stages"
+            name: "stages"
+            widget: "list"
+            summary: "{{label}}"
+            fields:
+              - label: "Label"
+                name: "label"
+                widget: "string"
+                hint: "e.g. UCI, USC — shown under the white circle."
+              - label: "Research Work (left side)"
+                name: "research"
+                widget: "object"
+                fields:
+                  - {label: "Image", name: "image", widget: "image", required: false}
+                  - {label: "Description", name: "description", widget: "text"}
+              - label: "Other Work (right side, up to 4)"
+                name: "works"
+                widget: "list"
+                max: 4
+                summary: "{{description}}"
+                fields:
+                  - {label: "Image", name: "image", widget: "image", required: false}
+                  - {label: "Description", name: "description", widget: "text"}
+
   - name: "home"
     label: "Homepage"
     files:
