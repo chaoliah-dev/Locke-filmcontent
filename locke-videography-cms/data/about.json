@@ -1,0 +1,22 @@
+{
+  "video_embed": "",
+  "stages": [
+    {
+      "label": "UCI",
+      "research": { "image": "", "description": "Add a short description of this research work." },
+      "works": [
+        { "image": "", "description": "Add a short description of this work." },
+        { "image": "", "description": "Add a short description of this work." },
+        { "image": "", "description": "Add a short description of this work." }
+      ]
+    },
+    {
+      "label": "USC",
+      "research": { "image": "", "description": "Add a short description of this research work." },
+      "works": [
+        { "image": "", "description": "Add a short description of this work." },
+        { "image": "", "description": "Add a short description of this work." }
+      ]
+    }
+  ]
+}
