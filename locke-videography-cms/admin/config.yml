@@ -85,6 +85,10 @@ collections:
             name: "ai_cover"
             widget: "image"
             required: false
+          - label: "About Section Cover (bottom of homepage)"
+            name: "about_cover"
+            widget: "image"
+            required: false
 
   - name: "instagram_works"
     label: "Instagram Commercial — Main Page Works"
