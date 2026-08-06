@@ -48,6 +48,7 @@
       applyCover('coverTravel', data.travel_cover);
       applyCover('coverInstagram', data.instagram_cover);
       applyCover('coverAi', data.ai_cover);
+      applyCover('coverAboutHome', data.about_cover);
       if(data.hero_video){
         video.src = data.hero_video;
         if(reduce){
