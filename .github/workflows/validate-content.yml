@@ -1,0 +1,34 @@
+name: Validate CMS content
+
+on:
+  push:
+    paths:
+      - "locke-videography-cms/data/**/*.json"
+      - ".github/workflows/validate-content.yml"
+  pull_request:
+    paths:
+      - "locke-videography-cms/data/**/*.json"
+      - ".github/workflows/validate-content.yml"
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate CMS JSON files
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          files = sorted(Path("locke-videography-cms/data").glob("*.json"))
+          if not files:
+              raise SystemExit("No CMS JSON files found")
+
+          for path in files:
+              with path.open(encoding="utf-8") as handle:
+                  json.load(handle)
+              print(f"Valid: {path}")
+          PY
