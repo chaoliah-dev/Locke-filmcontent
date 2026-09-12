@@ -42,7 +42,10 @@
   }
 
   fetch('data/home.json')
-    .then(function(r){ return r.json(); })
+    .then(function(r){
+      if(!r.ok) throw new Error('Homepage data request failed: ' + r.status);
+      return r.json();
+    })
     .then(function(data){
       if(data.hero_poster){ video.setAttribute('poster', data.hero_poster); }
       applyCover('coverTravel', data.travel_cover);
