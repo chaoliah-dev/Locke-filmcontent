@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Locke Videography — Film & photo work</title>
 <meta name="description" content="Travel film, commercial video, and AI-assisted visual work by Locke Hsu.">
+<link rel="canonical" href="https://lockevisualwork.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Locke Videography — Film & photo work">
+<meta property="og:description" content="Travel film, commercial video, and AI-assisted visual work by Locke Hsu.">
+<meta property="og:url" content="https://lockevisualwork.netlify.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -37,6 +42,10 @@ body{
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
 .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
 .eyebrow{
   font-family:var(--font-mono);
@@ -794,7 +803,7 @@ ul{list-style:none}
 <nav class="nav on-dark" id="mainNav">
   <div class="wrap">
     <a href="index.html" class="brand"><span class="dot"></span>LOCKE VIDEOGRAPHY</a>
-    <button class="navtoggle" aria-label="Toggle menu" id="navToggle">
+    <button class="navtoggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false" id="navToggle">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
     </button>
     <div class="navlinks" id="navLinks">
@@ -807,7 +816,8 @@ ul{list-style:none}
 </nav>
 
 <header class="hero hero-video" id="heroVideo">
-  <video id="heroClip" class="hero-clip" muted playsinline preload="auto" poster=""></video>
+  <h1 class="sr-only">Locke Videography — Film and visual work</h1>
+  <video id="heroClip" class="hero-clip" muted playsinline preload="auto" poster="" aria-hidden="true"></video>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap hero-content">
     <a href="#work" class="btn hero-cta" id="heroCta">View the work <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
@@ -864,7 +874,7 @@ ul{list-style:none}
 
 <section class="section dark">
   <div class="wrap about">
-    <div class="cover" style="aspect-ratio:4/3;border-radius:6px;max-width:70%;">
+    <div class="cover" id="coverAboutHome" style="aspect-ratio:4/3;border-radius:6px;max-width:70%;">
       <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8A8D93" stroke-width="1.4"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
       <span class="placeholder-label">COVER — REPLACE WITH IMAGE</span>
     </div>
@@ -898,10 +908,22 @@ ul{list-style:none}
 
   var toggle=document.querySelector('.navtoggle');
   var links=document.querySelector('.navlinks');
-  if(toggle){
-    toggle.addEventListener('click',function(){links.classList.toggle('open')});
+  if(toggle && links){
+    var setMenuOpen=function(open){
+      links.classList.toggle('open',open);
+      toggle.setAttribute('aria-expanded',String(open));
+    };
+    toggle.addEventListener('click',function(){
+      setMenuOpen(!links.classList.contains('open'));
+    });
     links.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click',function(){links.classList.remove('open')});
+      a.addEventListener('click',function(){setMenuOpen(false)});
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape' && links.classList.contains('open')){
+        setMenuOpen(false);
+        toggle.focus();
+      }
     });
   }
 
