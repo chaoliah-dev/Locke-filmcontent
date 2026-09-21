@@ -4,10 +4,14 @@ on:
   push:
     paths:
       - "locke-videography-cms/data/**/*.json"
+      - "locke-videography-cms/js/**/*.js"
+      - "locke-videography-cms/work.html"
       - ".github/workflows/validate-content.yml"
   pull_request:
     paths:
       - "locke-videography-cms/data/**/*.json"
+      - "locke-videography-cms/js/**/*.js"
+      - "locke-videography-cms/work.html"
       - ".github/workflows/validate-content.yml"
 
 jobs:
@@ -31,4 +35,20 @@ jobs:
               with path.open(encoding="utf-8") as handle:
                   json.load(handle)
               print(f"Valid: {path}")
+          travel_path = Path("locke-videography-cms/data/travel-works.json")
+          with travel_path.open(encoding="utf-8") as handle:
+              works = json.load(handle).get("works", [])
+
+          slugs = [str(work.get("slug", "")).strip() for work in works]
+          if any(not slug for slug in slugs):
+              raise SystemExit("Every travel work must have a non-empty slug")
+          if len(slugs) != len(set(slugs)):
+              raise SystemExit("Travel work slugs must be unique")
+          print(f"Valid: {len(slugs)} unique travel-work slugs")
           PY
+      - name: Validate JavaScript syntax
+        shell: bash
+        run: |
+          for file in locke-videography-cms/js/*.js; do
+            node --check "$file"
+          done

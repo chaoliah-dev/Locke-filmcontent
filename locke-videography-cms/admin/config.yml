@@ -196,7 +196,7 @@ collections:
               - label: "URL slug"
                 name: "slug"
                 widget: "string"
-                hint: "Must exactly match this work's HTML filename, without .html — do not change for existing works."
+                hint: "Unique address for this film. Use lowercase letters, numbers, and hyphens, for example faroe-in-rain. Existing slugs may remain unchanged."
 
   - name: "ai_assets"
     label: "AI Assets"

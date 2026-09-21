@@ -9,6 +9,10 @@
     return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
+  function workUrl(w){
+    return 'work.html?slug=' + encodeURIComponent(w.slug || '');
+  }
+
   fetch('data/travel-works.json')
     .then(function(r){ return r.json(); })
     .then(function(data){
@@ -38,7 +42,7 @@
       var titleList = document.getElementById('heroTitles');
       recent.forEach(function(w, i){
         var a = document.createElement('a');
-        a.href = w.slug + '.html';
+        a.href = workUrl(w);
         if (i === 0) a.className = 'active';
         a.setAttribute('data-target', i + 1);
         a.innerHTML = '<span class="tname">' + esc(w.title) + '</span><span class="tyear">' + esc(w.year) + '</span>';
@@ -50,7 +54,7 @@
       var grid = document.getElementById('pastGrid');
       past.forEach(function(w, i){
         var a = document.createElement('a');
-        a.href = w.slug + '.html';
+        a.href = workUrl(w);
         a.className = 'btile';
         a.style.setProperty('--area', areas[i]);
 
